@@ -1,0 +1,59 @@
+{
+	// define the top-left and bottom-right coordinates of the gesture
+	// capture area
+	"top_left": [20, 10],
+	"bot_right": [320, 310],
+
+	// create the key mappings, where a key on the keyboard maps to a
+	// gesture name -- these mappings will be used to organize training
+	// data on disk
+	"mappings": {
+		"i": "ignore",
+		"f": "fist",
+		"h": "hang_loose",
+		"p": "peace",
+		"s": "stop",
+		"l": "left",
+		"r": "right"
+	},
+
+	// path to where captured training data will be stored
+	"dataset_path": "../datasets/hand_gesture_dataset",
+
+	// define the initial learning rate, batch size, and number of
+	// epochs to train for
+	"init_lr": 1e-3,
+	"bs": 8,
+	"num_epochs": 75,
+
+	// path to the trained gesture recognition model and the label
+	// binarizer
+	"model_path": "output/gesture_reco.h5",
+	"lb_path": "output/lb.pickle",
+
+	// path to the assets directory
+	"assets_path": "assets",
+
+	// define the correct pass code
+	"passcode": ["peace", "stop", "fist", "hang_loose"],
+
+	// number of consecutive frames a gesture needs to be successfully
+	// classified until updating the gestures list
+	"consec_frames": 30,
+
+	// number of seconds to show the status message after a correct or
+	// incorrect pas code entry
+	"num_seconds": 10,
+
+	// path to the audio files that will play for correct and incorrect
+	// pass codes
+	"correct_audio": "assets/correct.wav",
+	"incorrect_audio": "assets/incorrect.wav",
+
+	// variables to store your twilio account credentials
+	"twilio_sid": "YOUR_TWILIO_SID",
+	"twilio_auth": "YOUR_TWILIO_AUTH_ID",
+	"twilio_to": "YOUR_PHONE_NUMBER",
+	"twilio_from": "YOUR_TWILIO_PHONE_NUMBER",
+	"address_id": "YOUR_ADDRESS"
+}
